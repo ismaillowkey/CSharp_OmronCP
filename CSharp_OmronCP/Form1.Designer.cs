@@ -60,11 +60,19 @@ namespace CSharp_OmronCP
             this.button7 = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.CmbValueBool = new System.Windows.Forms.ComboBox();
+            this.GBWriteWord = new System.Windows.Forms.GroupBox();
+            this.TxtWriteWord = new System.Windows.Forms.TextBox();
+            this.button5 = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.NUPValue = new System.Windows.Forms.NumericUpDown();
+            this.label10 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.GBReadDM.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NUPD)).BeginInit();
             this.GBReadBit.SuspendLayout();
             this.GBWriteBit.SuspendLayout();
+            this.GBWriteWord.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NUPValue)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -253,6 +261,7 @@ namespace CSharp_OmronCP
             // 
             // GBReadBit
             // 
+            this.GBReadBit.Controls.Add(this.label10);
             this.GBReadBit.Controls.Add(this.textBox1);
             this.GBReadBit.Controls.Add(this.button4);
             this.GBReadBit.Controls.Add(this.label8);
@@ -407,11 +416,85 @@ namespace CSharp_OmronCP
             this.CmbValueBool.Size = new System.Drawing.Size(121, 28);
             this.CmbValueBool.TabIndex = 11;
             // 
+            // GBWriteWord
+            // 
+            this.GBWriteWord.Controls.Add(this.NUPValue);
+            this.GBWriteWord.Controls.Add(this.TxtWriteWord);
+            this.GBWriteWord.Controls.Add(this.button5);
+            this.GBWriteWord.Controls.Add(this.label9);
+            this.GBWriteWord.Enabled = false;
+            this.GBWriteWord.Location = new System.Drawing.Point(44, 348);
+            this.GBWriteWord.Name = "GBWriteWord";
+            this.GBWriteWord.Size = new System.Drawing.Size(395, 84);
+            this.GBWriteWord.TabIndex = 4;
+            this.GBWriteWord.TabStop = false;
+            this.GBWriteWord.Text = "Write Word";
+            // 
+            // TxtWriteWord
+            // 
+            this.TxtWriteWord.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtWriteWord.Location = new System.Drawing.Point(64, 35);
+            this.TxtWriteWord.Name = "TxtWriteWord";
+            this.TxtWriteWord.Size = new System.Drawing.Size(95, 27);
+            this.TxtWriteWord.TabIndex = 7;
+            this.TxtWriteWord.Text = "D0";
+            this.TxtWriteWord.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // button5
+            // 
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.Location = new System.Drawing.Point(276, 33);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(105, 29);
+            this.button5.TabIndex = 2;
+            this.button5.Text = "Write Short";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(6, 36);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(52, 22);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "Write";
+            // 
+            // NUPValue
+            // 
+            this.NUPValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NUPValue.Location = new System.Drawing.Point(165, 36);
+            this.NUPValue.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.NUPValue.Minimum = new decimal(new int[] {
+            32767,
+            0,
+            0,
+            -2147483648});
+            this.NUPValue.Name = "NUPValue";
+            this.NUPValue.Size = new System.Drawing.Size(105, 27);
+            this.NUPValue.TabIndex = 8;
+            this.NUPValue.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(61, 103);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(202, 13);
+            this.label10.TabIndex = 11;
+            this.label10.Text = "bug read CIO for hslcommunication v6.25";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(902, 468);
+            this.Controls.Add(this.GBWriteWord);
             this.Controls.Add(this.GBWriteBit);
             this.Controls.Add(this.GBReadBit);
             this.Controls.Add(this.GBReadDM);
@@ -428,6 +511,9 @@ namespace CSharp_OmronCP
             this.GBReadBit.PerformLayout();
             this.GBWriteBit.ResumeLayout(false);
             this.GBWriteBit.PerformLayout();
+            this.GBWriteWord.ResumeLayout(false);
+            this.GBWriteWord.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NUPValue)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -465,6 +551,12 @@ namespace CSharp_OmronCP
         private System.Windows.Forms.TextBox TxtWriteBit;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.GroupBox GBWriteWord;
+        private System.Windows.Forms.NumericUpDown NUPValue;
+        private System.Windows.Forms.TextBox TxtWriteWord;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
     }
 }
 

@@ -95,6 +95,7 @@ namespace CSharp_OmronCP
             GBReadDM.Enabled = status;
             GBReadBit.Enabled = status;
             GBWriteBit.Enabled = status;
+            GBWriteWord.Enabled = status;
         }
 
         private void BtnDisconnect_Click(object sender, EventArgs e)
@@ -163,6 +164,15 @@ namespace CSharp_OmronCP
         private void button7_Click(object sender, EventArgs e)
         {
             var res = hostlink.Write(TxtWriteBit.Text,Convert.ToBoolean(CmbValueBool.Text));
+            if (res.IsSuccess)
+                MessageBox.Show("Write Success", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            else
+                MessageBox.Show(res.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            var res = hostlink.Write(TxtWriteWord.Text, (short)NUPValue.Value);
             if (res.IsSuccess)
                 MessageBox.Show("Write Success", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
